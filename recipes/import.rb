@@ -1,4 +1,4 @@
-unless default['wordpress']['origin_host'].nil?
+unless node['wordpress']['new_host'].nil?
   include_recipe 'deploy-project::mysql'
 
   execute "Import database: #{node['deploy-project']['db']['database']}" do

@@ -1,2 +1,2 @@
-default['wordpress']['origin_host'] = "http://#{node['deploy-project']['domain']}"
-default['wordpress']['new_host'] = nil
+default['wordpress']['origin_host'] = nil
+default['wordpress']['new_host'] = "http://#{node['deploy-project']['domain']}"
