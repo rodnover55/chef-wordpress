@@ -1,7 +1,7 @@
-unless node['wordpress']['new_host'].nil?
+unless node['wordpress']['new_host'].nil? || node['deploy-project']['db']['install'].nil?
   include_recipe 'deploy-project::mysql'
 
-  execute "Import database: #{node['deploy-project']['db']['database']}" do
+  execute "Import wordpress database: #{node['deploy-project']['db']['database']}" do
     cat = case ::File.extname(node['deploy-project']['db']['install'])
             when '.gz'
               'zcat'
